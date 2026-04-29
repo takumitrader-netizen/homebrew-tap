@@ -10,18 +10,18 @@ class McpShield < Formula
   # (S61) Bottles ship from the public binary-only releases repo
   # (takumitrader-netizen/mcp-shield-releases) rather than cdn.mcpshieldai.com.
   # Source-archive download is intentionally not supported — source is private.
-  version "0.2.0"
+  version "0.2.1"
   license :cannot_represent
 
   on_macos do
     on_arm do
-      url "https://github.com/takumitrader-netizen/mcp-shield-releases/releases/download/v0.2.0/mcp-shield-aarch64-apple-darwin.tar.gz"
-      sha256 "4135d9c2c7a8f1906ea2617f5ba0084c649ffb4df416fa8587378693ebb9b7fa"
+      url "https://github.com/takumitrader-netizen/mcp-shield-releases/releases/download/v0.2.1/mcp-shield-aarch64-apple-darwin.tar.gz"
+      sha256 "1be801a2cd28d2136e4d036bedf851e02872d07cfaf0bc55c76a006a16cefd9c"
     end
 
     on_intel do
-      url "https://github.com/takumitrader-netizen/mcp-shield-releases/releases/download/v0.2.0/mcp-shield-x86_64-apple-darwin.tar.gz"
-      sha256 "62dedaed9e3a84923d2428f51ecb5426db08634f4655a9185bf53a407ace309a"
+      url "https://github.com/takumitrader-netizen/mcp-shield-releases/releases/download/v0.2.1/mcp-shield-x86_64-apple-darwin.tar.gz"
+      sha256 "bdfe72e79a202bff7cd46604c3406bc90af029e3899b8a84bad12b5b70bb474f"
     end
   end
 
@@ -31,8 +31,8 @@ class McpShield < Formula
       # smaller). Static-musl variant ships in the same release for older
       # distros (CentOS 7 / Alpine / scratch containers); Homebrew picks gnu
       # by convention.
-      url "https://github.com/takumitrader-netizen/mcp-shield-releases/releases/download/v0.2.0/mcp-shield-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "fc80bfb730c82a122a1ced124a213a9e7d3db3215a4a26c78f977ec7ba5a3455"
+      url "https://github.com/takumitrader-netizen/mcp-shield-releases/releases/download/v0.2.1/mcp-shield-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "85c90239c5e93421f3e2b68dbd0acc791c79838c892b8fc7beaee4792f290021"
     end
 
     # (S61) Linux ARM64 (Graviton, Raspberry Pi 4+, ARM cloud) ships from

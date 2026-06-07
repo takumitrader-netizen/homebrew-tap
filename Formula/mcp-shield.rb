@@ -5,23 +5,23 @@ class McpShield < Formula
   # scripts/update-homebrew-formula.sh, which reads the canonical version from
   # Cargo.toml (the single source of truth). Do NOT bump by hand. The value
   # here must match Cargo.toml or `brew test` will fail the `assert_match
-  # version.to_s, output` assertion. Current release: 0.2.0.
+  # version.to_s, output` assertion. Current release: 0.3.1.
   #
   # (S61) Bottles ship from the public binary-only releases repo
   # (takumitrader-netizen/mcp-shield-releases) rather than cdn.mcpshieldai.com.
   # Source-archive download is intentionally not supported — source is private.
-  version "0.3.0"
+  version "0.3.1"
   license :cannot_represent
 
   on_macos do
     on_arm do
-      url "https://github.com/takumitrader-netizen/mcp-shield-releases/releases/download/v0.3.0/mcp-shield-aarch64-apple-darwin.tar.gz"
-      sha256 "3cfd0fa9ec61888da5d69ffcb1e2571608a1f6ebe608a1d3db3ae1139945a448"
+      url "https://github.com/takumitrader-netizen/mcp-shield-releases/releases/download/v0.3.1/mcp-shield-aarch64-apple-darwin.tar.gz"
+      sha256 "cb6bf831cb34bacf21a7a0b073dc8c3e25e2cf46cc10d5417390d9c914385f4c"
     end
 
     on_intel do
-      url "https://github.com/takumitrader-netizen/mcp-shield-releases/releases/download/v0.3.0/mcp-shield-x86_64-apple-darwin.tar.gz"
-      sha256 "e7e1f17f62ac89514b1f936df445bde44067585befbb0845657e6c296d03f5ca"
+      url "https://github.com/takumitrader-netizen/mcp-shield-releases/releases/download/v0.3.1/mcp-shield-x86_64-apple-darwin.tar.gz"
+      sha256 "441b5c57396cd20b8ce78f6320217d6aba4300e1213afb8b44b255be489f407a"
     end
   end
 
@@ -31,8 +31,8 @@ class McpShield < Formula
       # smaller). Static-musl variant ships in the same release for older
       # distros (CentOS 7 / Alpine / scratch containers); Homebrew picks gnu
       # by convention.
-      url "https://github.com/takumitrader-netizen/mcp-shield-releases/releases/download/v0.3.0/mcp-shield-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "bb67fe3a02ed892e19aac8946c66bbd54469b3bb8baf4e123944d480dd27fd2f"
+      url "https://github.com/takumitrader-netizen/mcp-shield-releases/releases/download/v0.3.1/mcp-shield-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "354ee87c89e1d5636b23d7a37e6d5e678e4e76b5757cf78dd77cdfd2090221dc"
     end
 
     # (S61) Linux ARM64 (Graviton, Raspberry Pi 4+, ARM cloud) ships from

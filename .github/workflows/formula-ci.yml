@@ -55,7 +55,7 @@ jobs:
       - name: Install formula
         run: |
           brew tap takumitrader-netizen/tap "$GITHUB_WORKSPACE"
-          brew trust --formula takumitrader-netizen/tap/mcp-shield
+          brew trust takumitrader-netizen/tap
           brew install takumitrader-netizen/tap/mcp-shield
 
       - name: Run formula test

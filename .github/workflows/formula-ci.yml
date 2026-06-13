@@ -40,6 +40,8 @@ jobs:
   linux-test:
     name: brew test Linux
     runs-on: ubuntu-24.04
+    env:
+      HOMEBREW_NO_SANDBOX_LINUX: "1"
     steps:
       - name: Check out tap
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4

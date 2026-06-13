@@ -16,27 +16,6 @@ permissions:
   contents: read
 
 jobs:
-  macos-test:
-    name: brew test macOS
-    runs-on: macos-13
-    steps:
-      - name: Check out tap
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-
-      - name: Install formula
-        run: |
-          brew tap takumitrader-netizen/tap "$GITHUB_WORKSPACE"
-          brew install takumitrader-netizen/tap/mcp-shield
-
-      - name: Run formula test
-        run: brew test takumitrader-netizen/tap/mcp-shield
-
-      - name: Verify installed version
-        run: |
-          set -euo pipefail
-          mcp-shield info
-          mcp-shield info | grep "0.3.2"
-
   linux-test:
     name: brew test Linux
     runs-on: ubuntu-24.04

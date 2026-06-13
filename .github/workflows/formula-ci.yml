@@ -1,0 +1,36 @@
+name: Formula CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Formula/**"
+      - ".github/workflows/formula-ci.yml"
+  pull_request:
+    paths:
+      - "Formula/**"
+      - ".github/workflows/formula-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: brew test
+    runs-on: macos-13
+    steps:
+      - name: Check out tap
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Install formula
+        run: brew install --formula ./Formula/mcp-shield.rb
+
+      - name: Run formula test
+        run: brew test --formula ./Formula/mcp-shield.rb
+
+      - name: Verify installed version
+        run: |
+          set -euo pipefail
+          mcp-shield info
+          mcp-shield info | grep "0.3.2"

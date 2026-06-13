@@ -24,10 +24,12 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Install formula
-        run: brew install --formula ./Formula/mcp-shield.rb
+        run: |
+          brew tap takumitrader-netizen/tap "$GITHUB_WORKSPACE"
+          brew install takumitrader-netizen/tap/mcp-shield
 
       - name: Run formula test
-        run: brew test --formula ./Formula/mcp-shield.rb
+        run: brew test takumitrader-netizen/tap/mcp-shield
 
       - name: Verify installed version
         run: |
@@ -49,10 +51,12 @@ jobs:
           echo "/home/linuxbrew/.linuxbrew/bin" >> "$GITHUB_PATH"
 
       - name: Install formula
-        run: brew install --formula ./Formula/mcp-shield.rb
+        run: |
+          brew tap takumitrader-netizen/tap "$GITHUB_WORKSPACE"
+          brew install takumitrader-netizen/tap/mcp-shield
 
       - name: Run formula test
-        run: brew test --formula ./Formula/mcp-shield.rb
+        run: brew test takumitrader-netizen/tap/mcp-shield
 
       - name: Verify installed version
         run: |

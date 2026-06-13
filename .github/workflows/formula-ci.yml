@@ -16,12 +16,37 @@ permissions:
   contents: read
 
 jobs:
-  test:
-    name: brew test
+  macos-test:
+    name: brew test macOS
     runs-on: macos-13
     steps:
       - name: Check out tap
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Install formula
+        run: brew install --formula ./Formula/mcp-shield.rb
+
+      - name: Run formula test
+        run: brew test --formula ./Formula/mcp-shield.rb
+
+      - name: Verify installed version
+        run: |
+          set -euo pipefail
+          mcp-shield info
+          mcp-shield info | grep "0.3.2"
+
+  linux-test:
+    name: brew test Linux
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out tap
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Install Homebrew
+        run: |
+          set -euo pipefail
+          NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          echo "/home/linuxbrew/.linuxbrew/bin" >> "$GITHUB_PATH"
 
       - name: Install formula
         run: brew install --formula ./Formula/mcp-shield.rb
